@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+article{
+    /* padding: 35px 30px; */
+    
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+button{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#pattern-bg{
+    padding: 35px 30px;
+    background: url(../images/pattern-bg.svg) no-repeat;
+    /* height: 100%; */
+    background-size: 100%;
+    /* background-position: center center; */
+}
+
+.view{
+    width: 275px;
+    height: 290px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
