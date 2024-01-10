@@ -10,7 +10,9 @@ article{
     min-width: 100%;
     padding: 35px 30px;
     background: url(../images/pattern-bg.svg) no-repeat;
-    background-size: 100%;
+    /* background-size: 100%; */
+    background-size: 350px;
+    background-position: center top;
     text-align: center;
     position: relative;
     border: 3px solid turquoise;
