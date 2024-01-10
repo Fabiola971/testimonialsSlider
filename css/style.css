@@ -7,30 +7,33 @@
 }
 
 article{
-    width: 100%;
+    min-width: 100%;
     padding: 35px 30px;
     background: url(../images/pattern-bg.svg) no-repeat;
     background-size: 100%;
     text-align: center;
     position: relative;
+    border: 3px solid turquoise;
 }
 
 article::after{
+    /* WIDTH:610px, HEIGHT:154px */
     content: url(../images/pattern-curve.svg);
     position: absolute;
     left: -100px;
-    /* z-index: 0; */
+    /* bottom: 0; */
 }
 
 body{
     font-family: 'Inter', sans-serif;
     font-size: 18px;
+    width: 100%;
 }
 
 button{
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    /* text-align: center; */
     position: absolute;
     left: 50%;
     margin-left: -45px;
@@ -43,6 +46,10 @@ button{
     -o-border-radius: 30px;
     padding: 13px 0;
     background-color: #fff;
+}
+
+main{
+    display: flex;
 }
 
 p.tips{
@@ -67,10 +74,16 @@ p.job{
 .face{
     position: relative;
     margin-bottom: 100px;
+     /* background: url(../images/pattern-bg.svg) no-repeat; */
+     /* background-size: 100%; */
 }
 
 .icon{
     margin-inline: 20px;
+}
+
+#slide1{
+  overflow-x: hidden;
 }
 
 .tips{
@@ -87,4 +100,16 @@ p.job{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     box-shadow: 5px 5px 55px hsl(0, 0%, 82%);
+}
+
+.moveLeft{
+    margin-right: 100%;
+}
+
+.moveRight{
+    margin-left: 100%;
+}
+
+@media screen and (min-width:1440px){
+    
 }
