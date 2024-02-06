@@ -23,13 +23,19 @@ const img = document.getElementsByClassName('view');
 
 
 // const button
+const articles = document.getElementsByTagName('article');
+console.log(articles);
+let currentSlide = 0;
 const icon = document.querySelectorAll('.icon');
 console.log(icon)
-const iconPrev = document.getElementsByClassName('icon-prev');
+const iconPrev = document.querySelector('.icon-prev');
 
-const iconNext = document.getElementsByClassName('icon-next');
+const iconNext = document.querySelector('icon-next');
 
-
+iconPrev.addEventListener('click', () =>{
+    // articles[currentSlide].classList.add('moveLeft');
+    console.log('ok');
+})
 
 /*
 let currentSlide = 0;
