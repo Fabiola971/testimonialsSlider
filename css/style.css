@@ -82,6 +82,7 @@ p.job{
 
 .icon{
     margin-inline: 20px;
+    cursor: pointer;
 }
 
 #slide1{
