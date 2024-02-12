@@ -22,17 +22,12 @@ const n = document.querySelector('.name');
 const job = document.querySelector('.job');
 const img = document.querySelector('.view');
 
-const slidesContainer = [...document.querySelectorAll('#slideContainer')];
-const iconPrev = [...document.querySelectorAll('.icon-prev')];
-const iconNext = [...document.querySelectorAll('.icon-next')];
+const iconPrev = document.querySelector('.icon-prev');
+const iconNext = document.querySelector('.icon-next');
 
 // set starting slide
 let currentSlide = 0;
-/*
-iconPrev.addEventListener('click', () =>{
-    console.log('ok');
-})
-*/
+
 // load initial slide
 window.addEventListener('DOMContentLoaded',  () =>{
     console.log('Hello good morning');
@@ -53,20 +48,22 @@ function showPerson(person){
     img.src = item.img;
 }
 
-slidesContainer.forEach((item, i) => {
-    let containerDimensions = item.getBoundingClientRect();
-    console.log(containerDimensions)
-    let containerWidth = containerDimensions.width;
-    console.log(containerWidth)
+// show next person
+iconNext.addEventListener('click',  () =>{
+    console.log('next')
+    currentSlide++;
+    if (currentSlide > testimonys.length - 1) {
+      currentSlide = 0;
+    }
+    showPerson(currentSlide);
+  });
+  // show prev person
+  iconPrev.addEventListener('click',  () =>{
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = testimonys.length - 1;
+    }
+    showPerson(currentSlide);
+  });
+  
     
-    
-    iconPrev[i].addEventListener('click', () =>{
-        console.log('prev');
-        item.scrollLeft -= containerWidth;
-    })
-
-    iconNext[i].addEventListener('click', () =>{
-        console.log('next');
-        item.scrollLeft += containerWidth;
-    })
-})

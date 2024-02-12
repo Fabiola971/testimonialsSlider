@@ -19,7 +19,7 @@ article{
 }
 
 article::after{
-    /* WIDTH:610px, HEIGHT:154px */
+    /* width:610px; height:154px; */
     content: url(../images/pattern-curve.svg);
     position: absolute;
     left: -100px;
@@ -65,8 +65,6 @@ p.tips::before{
     top: -50px;
     left: 50%;
     margin-left: -55px;
-    
-
 }
 
 p.job{
@@ -85,8 +83,10 @@ p.job{
     cursor: pointer;
 }
 
-#slide1{
-  /* overflow-x: hidden; */
+
+#slideContainer{
+    overflow: hidden;
+    scroll-behavior:smooth;
 }
 
 .tips{
