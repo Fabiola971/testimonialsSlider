@@ -47,7 +47,7 @@ function showPerson(person){
     job.textContent = item.job;
     img.src = item.img;
 }
-
+/*
 // show next person
 iconNext.addEventListener('click',  () =>{
     console.log('next')
@@ -65,5 +65,44 @@ iconNext.addEventListener('click',  () =>{
     }
     showPerson(currentSlide);
   });
-  
+  */
     
+  const slides = document.querySelectorAll(".slide");
+  const nextBtn = document.querySelector(".nextBtn");
+  const prevBtn = document.querySelector(".prevBtn");
+
+  slides.forEach( (slide, index) =>{
+    slide.style.left = `${index * 100}%`;
+  });
+
+  let counter = 0;
+
+  iconNext.addEventListener("click",  () => {
+    counter++;
+    carousel();
+  });
+  
+  iconPrev.addEventListener("click",  () => {
+    counter--;
+    carousel();
+  });
+  
+  function carousel() {
+    // working with slides
+    if (counter === slides.length) {
+       counter = 0;
+     }
+    if (counter < 0) {
+       counter = slides.length - 1;
+     }
+    // working with buttons
+  
+   
+    slides.forEach( (slide) =>{
+      slide.style.transform = `translateX(-${counter * 100}%)`;
+    });
+
+  }
+  
+
+  
