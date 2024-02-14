@@ -22,9 +22,9 @@ const n = document.querySelector('.name');
 const job = document.querySelector('.job');
 const img = document.querySelector('.view');
 
-const iconPrev = document.querySelector('.icon-prev');
-const iconNext = document.querySelector('.icon-next');
-
+const iconPrev = document.querySelectorAll('.icon-prev');
+const iconNext = document.querySelectorAll('.icon-next');
+const slides = document.querySelectorAll(".slide");
 // set starting slide
 let currentSlide = 0;
 
@@ -38,55 +38,33 @@ window.addEventListener('DOMContentLoaded',  () =>{
     img.src = item.img;
 });
 
-
-// first view
+// view
 function showPerson(person){
     const item = testimonys[person];
     tips.textContent = item.text;
     n.textContent = item.name;
     job.textContent = item.job;
     img.src = item.img;
-}
-/*
-// show next person
-iconNext.addEventListener('click',  () =>{
-    console.log('next')
-    currentSlide++;
-    if (currentSlide > testimonys.length - 1) {
-      currentSlide = 0;
-    }
-    showPerson(currentSlide);
-  });
-  // show prev person
-  iconPrev.addEventListener('click',  () =>{
-    currentSlide--;
-    if (currentSlide < 0) {
-      currentSlide = testimonys.length - 1;
-    }
-    showPerson(currentSlide);
-  });
-  */
-    
-  const slides = document.querySelectorAll(".slide");
-  const nextBtn = document.querySelector(".nextBtn");
-  const prevBtn = document.querySelector(".prevBtn");
+}  
+
+let counter = 0;
 
   slides.forEach( (slide, index) =>{
     slide.style.left = `${index * 100}%`;
+
+    iconNext[index].addEventListener("click",  () => {
+      counter++;
+      carousel();
+      showPerson(index);
+    });
+  
+    iconPrev[index].addEventListener("click",  () => {
+      counter--;
+      carousel();
+      showPerson(index);
+    });
   });
 
-  let counter = 0;
-
-  iconNext.addEventListener("click",  () => {
-    counter++;
-    carousel();
-  });
-  
-  iconPrev.addEventListener("click",  () => {
-    counter--;
-    carousel();
-  });
-  
   function carousel() {
     // working with slides
     if (counter === slides.length) {
@@ -95,9 +73,7 @@ iconNext.addEventListener('click',  () =>{
     if (counter < 0) {
        counter = slides.length - 1;
      }
-    // working with buttons
-  
-   
+     
     slides.forEach( (slide) =>{
       slide.style.transform = `translateX(-${counter * 100}%)`;
     });

@@ -74,6 +74,7 @@ p.job{
 .face{
     position: relative;
     margin-bottom: 100px;
+    grid-column: 2 / 3;
      /* background: url(../images/pattern-bg.svg) no-repeat; */
      /* background-size: 100%; */
 }
@@ -86,7 +87,17 @@ p.job{
 
 #slideContainer{
     overflow: hidden;
-    scroll-behavior:smooth;
+    
+}
+
+.slide{
+    position: absolute;
+    overflow: auto;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
 }
 
 .tips{
@@ -107,5 +118,23 @@ p.job{
 
 
 @media screen and (min-width:1440px){
-    
+    .face{
+        margin-bottom: 100px;
+        grid-column: 2 / 3;
+        border: 2px solid gold;
+    }
+
+    .slide{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    p.tips{
+        grid-row: 1/2;
+    }
+
+    .person{
+        grid-row: 2/3;
+    }
 }
